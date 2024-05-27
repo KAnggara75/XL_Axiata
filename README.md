@@ -61,10 +61,10 @@ curl --location 'https://4k38m.wiremockapi.cloud/subscriber/62819123456/pin'
 
 ```json
 {
-    "status": "ok",
-    "code": "00",
-    "message": "success",
-    "data": "1234"
+	"status": "ok",
+	"code": "00",
+	"message": "success",
+	"data": "1234"
 }
 ```
 
@@ -72,4 +72,12 @@ curl --location 'https://4k38m.wiremockapi.cloud/subscriber/62819123456/pin'
 
 ```bash
 curl --location 'https://4k38m.wiremockapi.cloud/subscriber/628191/pin'
+```
+
+```json
+{
+	"status": "failed",
+	"code": "01",
+	"message": "subscriber not found"
+}
 ```
