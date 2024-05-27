@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: subscriber-transaction
+
+  datasource: 
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/xl_playground
+    username: root
+    password: root
+    name: PlaygroundDB
+
+query:
+  transaction:
+    fetchbymsisdn: "SELECT DATE_FORMAT(transaction_date, '%Y-%m') AS month, COUNT(id) totalTransaction, SUM(amount) totalAmount FROM transaction WHERE msisdn=(:msisdn) GROUP BY month ORDER BY month DESC"
+
+getpin:
+  baseurl: "https://4k38m.wiremockapi.cloud"
