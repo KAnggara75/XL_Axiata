@@ -1,0 +1,9 @@
+title Subscriber Monthly Transaction (OK)
+
+Touchpoint->API: Request Subscriber\nMonthly Transaction\n\nPOST /api/transaction/summary HTTP/1.1\nContent-Type: application/json\nAccept: application/json\n\n{\n    "msisdn":"62819123456",\n    "pin":"12345"\n}
+
+API->PIN API: Request pin for MSISDN\n\nGET /subscriber/<MSISDN>/pin HTTP/1.1\nHost: 4k38m.wiremockapi.cloud\nContent-Type: application/json\nAccept: application/json\n
+
+PIN API-->API: Response PIN Data\n\nHTTP/1.1 200 OK\nContent-Type: application/json\nAccept: application/json\n\n{\n    "status": "ok",\n    "code": "00",\n    "message": "success",\n    "data": "1234"\n}
+
+API-->Touchpoint: Response Subscriber\nMonthly Transaction\n\nHTTP/1.1 200 OK\nContent-Type: application/json\nAccept: application/json\n\n{\n    "status": "ok",\n    "code": "00",\n    "message": "success",\n    "data": [\n        {\n            "month": "2024-04",\n            "totalAmount": 100000,\n            "totalTransaction": 10\n        },\n        {\n            "month": "2024-03",\n            "totalAmount": 90000,\n            "totalTransaction": 80\n        },\n            ]\n}
