@@ -2,6 +2,8 @@
 
 ## Use Case: Query Subscriber Monthly Transaction
 
+![Subscriber Monthly Transaction](./Subscriber%20Monthly%20Transaction.png)
+
 ### Context:  
 As a software engineer, we have request from Touchpoint team to provide new API to get subscriber monthly transaction summary. Touchpoint only need total amount and total transaction for each month. For security measurement we need to validate subscriber PIN.
 
